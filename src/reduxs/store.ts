@@ -1,10 +1,8 @@
 import {
-  combineReducers,
   configureStore,
   ThunkDispatch,
   AnyAction,
   Store,
-  getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import rootReducer from "./rootReducers";
 

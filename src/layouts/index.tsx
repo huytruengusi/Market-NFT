@@ -4,8 +4,8 @@ import { menus } from "@/constants";
 import {
   setWalletInfo,
   setWeb3Provider,
-} from "../reduxs/accounts/account.slices";
-import { useAppDispatch, useAppSelector } from "../reduxs/hooks";
+} from "@/reduxs/accounts/account.slices";
+import { useAppDispatch, useAppSelector } from "@/reduxs/hooks";
 import { Flex, Heading, Spacer, Text } from "@chakra-ui/react";
 import { ethers } from "ethers";
 import Link from "next/link";
@@ -13,11 +13,12 @@ import { useRouter } from "next/router";
 import React, { ReactNode } from "react";
 
 interface IProps {
-  children?: ReactNode;
+  children: ReactNode;
 }
 
 export default function MainLayout({ children }: IProps) {
   const router = useRouter();
+  console.log(router.pathname);
 
   const dispatch = useAppDispatch();
   const { wallet } = useAppSelector((state) => state.account);
@@ -53,7 +54,7 @@ export default function MainLayout({ children }: IProps) {
         {menus.map((menu) => (
           <Link href={menu.url} key={menu.url}>
             <a>
-              <Text mx="20px" textDecoration="underline" fontSize="20px">
+              <Text mx="20px" fontSize="20px" textDecoration="underline">
                 {menu.name}
               </Text>
             </a>

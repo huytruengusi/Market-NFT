@@ -1,4 +1,3 @@
-declare var window: any;
 import React from "react";
 import { SimpleGrid, useDisclosure } from "@chakra-ui/react";
 import { SuccessModal } from "../../components";

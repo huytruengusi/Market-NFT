@@ -41,7 +41,7 @@ export default class CrowSaleContract extends BaseInterface {
     const rate = await this.getUsdtRate();
     const test = amount / rate;
     const tx: TransactionResponse = await this._contract.buyTokenByUSDT(
-      this._numberToEth(test),
+      this._numberToEth(amount / rate),
       this._option
     );
     return this._handleTransactionResponse(tx);
